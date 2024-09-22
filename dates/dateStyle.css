@@ -6,6 +6,13 @@ body {
   background-color: #5b4c4c;
   font-family: "Inter", sans-serif;
 }
+iframe {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
 .dateText {
   display: flex;
 }
@@ -15,6 +22,11 @@ body {
   font-weight: 200;
   font-style: normal;
 }
+.dataSliderShow {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+}
+
 .slider {
   display: flex;
   flex-direction: column;
@@ -22,7 +34,7 @@ body {
 }
 .line {
   width: 3px;
-  height: 300px;
+  height: 580px;
   background-color: #000000;
 }
 .highPlate, .lowPlate {
@@ -35,8 +47,14 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -300px;
+  top: -580px;
   background: #FFC8A7;
   border-radius: 90px;
-  transition: 1.3s cubic-bezier(0.36, 0.25, 0.19, 0.99);
+  transition: top 1.3s cubic-bezier(0.36, 0.25, 0.19, 0.99);
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+
 }
