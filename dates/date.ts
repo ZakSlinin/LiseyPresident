@@ -1,7 +1,10 @@
 let point: HTMLElement | null = document.getElementById('point');
 let lowPlateDate: HTMLElement | null = document.getElementById('lowPlateDate');
 let currentDate: Date;
-let endDate: Date = new Date(2024, 8, 22, 12, 0, 0);
+let endDate: Date = new Date(2024, 8, 22, 12, 30, 0);
+
+let lowerLimit = -60
+let upperLimit = -620
 
 if (lowPlateDate) {
     lowPlateDate.innerHTML = endDate.getFullYear() + ' ' + endDate.getMonth() + ' ' + endDate.getDate() + ' ' + endDate.getHours();
@@ -10,21 +13,22 @@ if (lowPlateDate) {
 function getCurrentDate(): void {
     currentDate = new Date();
     let currentPosAndDate: number = Number((30 - Math.round((endDate.getTime() - currentDate.getTime()) / 1000)));
-    if (currentPosAndDate > -30) {
+    if (currentPosAndDate > lowerLimit) {
         currentPosAndDate = currentPosAndDate * -1;
     }
-    if (currentPosAndDate < -560) {
-        currentPosAndDate = -560;
+    if (currentPosAndDate < upperLimit + 10) {
+        currentPosAndDate = upperLimit;
     }
-    while (currentPosAndDate >= -30) {
+    while (currentPosAndDate >= lowerLimit) {
         currentPosAndDate -= 30;
     }
+    console.log(currentPosAndDate);
     if (point) {
         point.style.top = currentPosAndDate + 'px';
-        if (currentPosAndDate >= -40 && currentPosAndDate < -560) {
+        if (lowerLimit <= currentPosAndDate && currentPosAndDate > upperLimit) {
             point.style.width = '24px';
             point.style.height = '24px';
-        } else if (-40 > currentPosAndDate && currentPosAndDate >= -560) {
+        } else if (lowerLimit > currentPosAndDate && currentPosAndDate <= upperLimit) {
             point.style.width = '12.5px';
             point.style.height = '12.5px';
         } else {
@@ -39,4 +43,4 @@ function getCurrentDate(): void {
         }
     }
 }
-setInterval(getCurrentDate, 0.1);
+setInterval(getCurrentDate, 1000);

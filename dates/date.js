@@ -1,29 +1,32 @@
 var point = document.getElementById('point');
 var lowPlateDate = document.getElementById('lowPlateDate');
 var currentDate;
-var endDate = new Date(2024, 8, 22, 12, 0, 0);
+var endDate = new Date(2024, 8, 22, 12, 30, 0);
+var lowerLimit = -60;
+var upperLimit = -620;
 if (lowPlateDate) {
     lowPlateDate.innerHTML = endDate.getFullYear() + ' ' + endDate.getMonth() + ' ' + endDate.getDate() + ' ' + endDate.getHours();
 }
 function getCurrentDate() {
     currentDate = new Date();
     var currentPosAndDate = Number((30 - Math.round((endDate.getTime() - currentDate.getTime()) / 1000)));
-    if (currentPosAndDate > -30) {
+    if (currentPosAndDate > lowerLimit) {
         currentPosAndDate = currentPosAndDate * -1;
     }
-    if (currentPosAndDate < -560) {
-        currentPosAndDate = -560;
+    if (currentPosAndDate < upperLimit + 10) {
+        currentPosAndDate = upperLimit;
     }
-    while (currentPosAndDate >= -30) {
+    while (currentPosAndDate >= lowerLimit) {
         currentPosAndDate -= 30;
     }
+    console.log(currentPosAndDate);
     if (point) {
         point.style.top = currentPosAndDate + 'px';
-        if (currentPosAndDate >= -40 && currentPosAndDate < -560) {
+        if (lowerLimit <= currentPosAndDate && currentPosAndDate > upperLimit) {
             point.style.width = '24px';
             point.style.height = '24px';
         }
-        else if (-40 > currentPosAndDate && currentPosAndDate >= -560) {
+        else if (lowerLimit > currentPosAndDate && currentPosAndDate <= upperLimit) {
             point.style.width = '12.5px';
             point.style.height = '12.5px';
         }
@@ -39,4 +42,4 @@ function getCurrentDate() {
         }
     }
 }
-setInterval(getCurrentDate, 0.1);
+setInterval(getCurrentDate, 1000);
