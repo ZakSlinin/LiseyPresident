@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.candidateCard {
+    width: 64vw;
+    height: 400px;
+    background: #3E3E83;
+    display: flex;
+}
+.candidateName {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.candidateName > h3 {
+    position: relative;
+    right: 30px;
+    font-family: Inter, sans-serif;
+    font-weight: 100;
+    color: #fff;
+    font-size: 5em;
+}
+.candidateImgDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.candidateImg {
+    width: 300px;
+    height: 300px;
+}
+
+.candidateData {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 64vw;
+}
+.nameAndGrade {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#candidateNameDiv {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+#candidateNameAndSurname {
+    font-size: 50px;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+}
+#candidateGradeDiv {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+#candidateGrade {
+    font-size: 50px;
+    float: right;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+}
+.candidateDescription {
+    display: flex;
+    background: #C4C4C4;
+    border-radius: 15px;
+    padding: 17px;
+}
+.candidateDescription > p {
+    font-family: Inter, sans-serif;
+    font-size: 22px;
+}
+.votePart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: #C4C4C4;
+    padding: 17px;
+    border-radius: 15px;
+
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+}
+.votePart > input {
+    width: 60%;
+    height: 47px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    background: #FFFFFF;
+    font-size: 20px;
+}
+::-webkit-input-placeholder {
+    color: black;
+    text-align:center;
+}
+.votePart > button {
+    color: white;
+
+    font-size: 20px;
+    width: 60%;
+    height: 47px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    background: #3E3E83;
+}

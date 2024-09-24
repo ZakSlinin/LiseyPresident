@@ -1,46 +1,22 @@
-let point: HTMLElement | null = document.getElementById('point');
-let lowPlateDate: HTMLElement | null = document.getElementById('lowPlateDate');
-let currentDate: Date;
-let endDate: Date = new Date(2024, 8, 22, 12, 30, 0);
+let endDate: Date = new Date(2024, 8, 30, 12, 30, 0);
 
-let lowerLimit = -60
-let upperLimit = -620
+function countdown() {
+    let currentDate: Date = new Date();
+    let timeRemaining: number = endDate.getTime() - currentDate.getTime();
 
-if (lowPlateDate) {
-    lowPlateDate.innerHTML = endDate.getFullYear() + ' ' + endDate.getMonth() + ' ' + endDate.getDate() + ' ' + endDate.getHours();
+    if (timeRemaining <= 0) {
+        changeForVoteEndElement(`Countdown Over!`)
+    } else {
+        let days: number = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        let hours: number = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes: number = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+
+        changeForVoteEndElement(`${days} : ${hours} : ${minutes}`)
+    }
 }
 
-function getCurrentDate(): void {
-    currentDate = new Date();
-    let currentPosAndDate: number = Number((30 - Math.round((endDate.getTime() - currentDate.getTime()) / 1000)));
-    if (currentPosAndDate > lowerLimit) {
-        currentPosAndDate = currentPosAndDate * -1;
-    }
-    if (currentPosAndDate < upperLimit + 10) {
-        currentPosAndDate = upperLimit;
-    }
-    while (currentPosAndDate >= lowerLimit) {
-        currentPosAndDate -= 30;
-    }
-    console.log(currentPosAndDate);
-    if (point) {
-        point.style.top = currentPosAndDate + 'px';
-        if (lowerLimit <= currentPosAndDate && currentPosAndDate > upperLimit) {
-            point.style.width = '24px';
-            point.style.height = '24px';
-        } else if (lowerLimit > currentPosAndDate && currentPosAndDate <= upperLimit) {
-            point.style.width = '12.5px';
-            point.style.height = '12.5px';
-        } else {
-            let dataOfPoint = [
-                point.style.width,
-                point.style.height,
-                point.style.top,
-            ]
-            console.error('Error of current position of Point')
-            console.table(dataOfPoint)
-            console.log(currentPosAndDate)
-        }
-    }
+function changeForVoteEndElement(data: string) {
+    document.getElementById("forVoteEnd").innerHTML = data;
 }
-setInterval(getCurrentDate, 1000);
+
+setInterval(countdown, 60000);
