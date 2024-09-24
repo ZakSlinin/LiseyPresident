@@ -8,10 +8,10 @@
 <body>
     <div class="candidateCard">
         <div class="candidateImgDiv">
-            <img class="candidateImg" src="../../public/333Без%20имени-1.png">
+            <img class="candidateImg" src="">
         </div>
         <div class="candidateName">
-            <h3>Кандидат 1</h3>
+            <h3 id="candidateNameForCard">Кандидат 1</h3>
         </div>
     </div>
     <div class="candidateData">
@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="candidateDescription">
-            <p>Предвыборная кампания кандидата</p>
+            <p id="candidateDescriptionText">Предвыборная кампания кандидата</p>
         </div>
         <form class="votePart">
             <input placeholder="введите код">
@@ -32,6 +32,6 @@
         </form>
     </div>
 
-    <script src="getCandidateData.js"></script>
+    <script src="fetchCandidateData.js"></script>
 </body>
 </html>
