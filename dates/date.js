@@ -1,42 +1,18 @@
-var point = document.getElementById('point');
-var lowPlateDate = document.getElementById('lowPlateDate');
-var currentDate;
-var endDate = new Date(2024, 8, 22, 12, 0, 0);
-if (lowPlateDate) {
-    lowPlateDate.innerHTML = endDate.getFullYear() + ' ' + endDate.getMonth() + ' ' + endDate.getDate() + ' ' + endDate.getHours();
-}
-function getCurrentDate() {
-    currentDate = new Date();
-    var currentPosAndDate = Number((30 - Math.round((endDate.getTime() - currentDate.getTime()) / 1000)));
-    if (currentPosAndDate > -30) {
-        currentPosAndDate = currentPosAndDate * -1;
+var endDate = new Date(2024, 8, 30, 12, 30, 0);
+function countdown() {
+    var currentDate = new Date();
+    var timeRemaining = endDate.getTime() - currentDate.getTime();
+    if (timeRemaining <= 0) {
+        changeForVoteEndElement("Countdown Over!");
     }
-    if (currentPosAndDate < -560) {
-        currentPosAndDate = -560;
-    }
-    while (currentPosAndDate >= -30) {
-        currentPosAndDate -= 30;
-    }
-    if (point) {
-        point.style.top = currentPosAndDate + 'px';
-        if (currentPosAndDate >= -40 && currentPosAndDate < -560) {
-            point.style.width = '24px';
-            point.style.height = '24px';
-        }
-        else if (-40 > currentPosAndDate && currentPosAndDate >= -560) {
-            point.style.width = '12.5px';
-            point.style.height = '12.5px';
-        }
-        else {
-            var dataOfPoint = [
-                point.style.width,
-                point.style.height,
-                point.style.top,
-            ];
-            console.error('Error of current position of Point');
-            console.table(dataOfPoint);
-            console.log(currentPosAndDate);
-        }
+    else {
+        var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        changeForVoteEndElement("".concat(days, " : ").concat(hours, " : ").concat(minutes));
     }
 }
-setInterval(getCurrentDate, 0.1);
+function changeForVoteEndElement(data) {
+    document.getElementById("forVoteEnd").innerHTML = data;
+}
+setInterval(countdown, 60000);

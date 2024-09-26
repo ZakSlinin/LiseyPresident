@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="candidateCard">
+        <div class="candidateImgDiv">
+            <img class="candidateImg" id="candidateImg" src="">
+        </div>
+        <div class="candidateName">
+            <h3 id="candidateNameForCard">Кандидат 1</h3>
+        </div>
+    </div>
+    <div class="candidateData">
+        <div class="nameAndGrade">
+            <div class="candidateNameDiv">
+                <h1 id="candidateNameAndSurname">Кандидат 1</h1>
+            </div>
+            <div class="candidateGradeDiv">
+                <h1 id="candidateGrade">9А</h1>
+            </div>
+        </div>
+        <div class="candidateDescription">
+            <p id="candidateDescriptionText">Предвыборная кампания кандидата</p>
+        </div>
+        <div class="votePart">
+            <input id="userCode" placeholder="введите код">
+            <button onclick="postVoteRouter()" type="submit">проголосовать</button>
+        </div>
+    </div>
+
+    <div class="popUp" id="errorPopUp">
+        <h1>Ошибка!</h1>
+        <h3>Вы ввели код неправильно <br> Или уже проголосовали</h3>
+        <button onclick="closePopUp()">Попробовать снова</button>
+    </div>
+
+    <div class="popUp" id="donePopUp">
+        <h1>Вы проголосовали!</h1>
+        <h3>Ваш голос очень важен!</h3>
+        <a href="../../mainPages/index.html">
+            <button>Вернуться на главную</button>
+        </a>
+        <button onclick="closePopUp()">Вернуться к кандидату</button>
+    </div>
+
+    <script src="fetchCandidateData.js"></script>
+</body>
+</html>
