@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 candidateDiv.appendChild(buttonNameDiv);
 
                 candidatesContainer.appendChild(candidateDiv);
+                addFunctions(buttonNameDiv, nameH1.innerText)
             });
         })
         .catch(error => {
@@ -49,4 +50,12 @@ function itemPipe(data) {
         item = item.replace('http://127.0.0.1:8001/', 'https://www.kringeproduction.ru/files/');
     }
     return item;
+}
+
+function addFunctions(div, candidateName) {
+    div.onclick = function () {
+        localStorage.clear()
+        localStorage.setItem('SelectedCandidateName', String(candidateName))
+        window.location = '../candidates/test/index.html'
+    }
 }
