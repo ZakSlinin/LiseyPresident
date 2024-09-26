@@ -6,7 +6,8 @@ let candidateData = {
     description:
         "long long long long long long long long long long long long long long test description",
     photo: File,
-    video: File
+    video: File,
+    userAttemptsLeft: 3
 }
 if (window) window.onload =
 function getDataFromLS() {
@@ -65,7 +66,8 @@ function htmlSetter() {
 function postVoteRouter() {
     let userCode = document.getElementById('userCode').value
 
-    postVote(userCode, nameToGet)
+    if (userCode.length === 8) postVote(userCode, nameToGet)
+    else errorPopUp('Bad usercode')
 }
 
 function postVote(userCode, candidate) {
@@ -89,17 +91,6 @@ function errorPopUp(error) {
     let popUp = document.getElementById('errorPopUp')
 
     popUp.style.display = 'flex'
-    setTimeout(() => {
-        let i = 1
-        let interval = setInterval( () => {
-            i -= 0.01
-            popUp.style.opacity = i
-            if (i <= 0) {
-                clearInterval(interval)
-                popUp.style.display = 'none'
-            }
-        }, 10)
-    }, 3000)
 }
 function donePopUp() {
     let popUp = document.getElementById('donePopUp')
@@ -120,5 +111,13 @@ function closePopUp() {
 }
 
 function setDisplayNone(item) {
-    item.style.display = 'none'
+    let i = 1
+    let interval = setInterval( () => {
+        i -= 0.05
+        item.style.opacity = i
+        if (i <= 0) {
+            clearInterval(interval)
+            item.style.display = 'none'
+        }
+    }, 10)
 }
