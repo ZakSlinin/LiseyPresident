@@ -82,6 +82,8 @@ body {
 }
 .candidateDescription {
     display: flex;
+    justify-content: center;
+    align-items: center;
     background: #C4C4C4;
     border-radius: 15px;
     padding: 17px;
