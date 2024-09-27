@@ -13,10 +13,8 @@ let candidateData = {
 if (window) window.onload =
 function getDataFromLS() {
     nameToGet = String(localStorage.getItem("SelectedCandidateName"))
-    console.log(nameToGet)
+    document.title = nameToGet;
     if (localStorage) {
-        
-
         let link = 'https://www.kringeproduction.ru/candidates/'
         fetchCandidates(link)
     }
@@ -131,13 +129,18 @@ document.getElementById('viewVideoBtn').addEventListener('click', function() {
 
 document.getElementById('closePopup').addEventListener('click', function() {
     document.getElementById('videoPopup').style.display = 'none';
+    setVideoTo0()
 });
 
 window.addEventListener('click', function(event) {
     const popup = document.getElementById('videoPopup');
     if (event.target === popup) {
-        document.getElementById('candidateVideo').pause()
-        document.getElementById('candidateVideo').currentTime = 0
+        setVideoTo0()
         popup.style.display = 'none';
     }
 });
+
+function setVideoTo0() {
+    document.getElementById('candidateVideo').pause()
+    document.getElementById('candidateVideo').currentTime = 0
+}

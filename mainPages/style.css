@@ -13,6 +13,11 @@ main {
   align-items: center;
 }
 
+.candidates-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+}
+
 .logo-background {
   width: 90vw;
   height: 30vh;
@@ -27,6 +32,7 @@ main {
 
 .logo {
   width: auto;
+  filter: drop-shadow(0 0 20px rgb(255, 255, 255));
   height: 150%;
 }
 
@@ -87,7 +93,7 @@ main {
   font-weight: 200;
   color: black;
   background: white;
-  border-radius: 250px;
+  border-radius: 25px;
   border: none;
 }
 
@@ -131,11 +137,8 @@ iframe {
   outline: none;
 }
 
-@media (max-width: 1920px) {
-  .logo-background {
-    width: 90vw;
-    height: 20vh;
-  }
+a {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */
