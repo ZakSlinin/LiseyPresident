@@ -104,7 +104,7 @@ body {
     font-weight: bold;
 }
 .votePart > input {
-    font-size: 50px;
+    font-size: 40px;
     width: 100%;
     height: auto;
     border: none;
@@ -120,7 +120,7 @@ body {
 }
 .votePart > button {
     color: white;
-    font-size: 50px;
+    font-size: 40px;
     width: 100%;
     height: auto;
     border: none;
@@ -251,5 +251,8 @@ footer {
     .candidateDescription > p {
         font-family: Inter, sans-serif;
         font-size: 50px;
+    }
+    .candidateData, .candidateCard {
+        width: 80vw;
     }
 }
