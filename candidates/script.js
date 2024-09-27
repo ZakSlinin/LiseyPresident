@@ -37,7 +37,7 @@ class candidateCard {
         div.onclick = function () {
             localStorage.clear()
             localStorage.setItem('SelectedCandidateName', String(candidateName))
-            window.location = 'test/index.html'
+            window.location = 'candidateWeb/index.html'
         }
     }
 }

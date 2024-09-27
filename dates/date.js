@@ -1,4 +1,4 @@
-var endDate = new Date(2024, 8, 30, 12, 30, 0);
+var endDate = new Date(2024, 9, 1, 0, 0, 0);
 function countdown() {
     var currentDate = new Date();
     var timeRemaining = endDate.getTime() - currentDate.getTime();
@@ -15,4 +15,5 @@ function countdown() {
 function changeForVoteEndElement(data) {
     document.getElementById("forVoteEnd").innerHTML = data;
 }
+countdown();
 setInterval(countdown, 60000);

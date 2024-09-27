@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 candidateDiv.appendChild(buttonNameDiv);
 
                 candidatesContainer.appendChild(candidateDiv);
-                addFunctions(buttonNameDiv, nameH1.innerText)
+                addFunctions(button, nameH1.innerText)
+
             });
         })
         .catch(error => {
@@ -56,6 +57,6 @@ function addFunctions(div, candidateName) {
     div.onclick = function () {
         localStorage.clear()
         localStorage.setItem('SelectedCandidateName', String(candidateName))
-        window.location = '../candidates/test/index.html'
+        window.location = '../candidates/candidateWeb/index.html'
     }
 }

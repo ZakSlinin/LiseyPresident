@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap')
 
+$p-font-basic-size: 50px
+
 *
   margin: 0
   padding: 0
@@ -15,7 +17,8 @@ main
 
 .logo-background
   width: 90vw
-  height: 20vh
+  height: 30vh
+  padding: 100px 0
   background: #3E3E83
   display: flex
   align-items: center
@@ -24,18 +27,18 @@ main
   margin-top: 35px
 
 .logo
-  width: 40%
-  height: 90%
+  width: auto
+  height: 150%
 
 .text-logo
+  font-family: Inter, sans-serif
   font-weight: 200
-  font-size: 115px
+  font-size: 100px
 
 .text-choose
   font-size: 80px
   font-weight: 200
   width: 100%
-
 
 .candidate-background
   width: 90vw
@@ -71,8 +74,9 @@ main
 
 .to-know
   width: 30vw
-  height: 4vh
-  font-size: 55px
+  height: 10vh
+  font-size: 4vw
+  text-align: center
   font-weight: 200
   color: black
   background: white
@@ -80,4 +84,37 @@ main
   border: none
 
 .date
-  font-size: 50px
+  font-size: $p-font-basic-size
+
+footer
+  display: flex
+  flex-direction: column
+  padding: 40px
+
+  .unanswered-questions
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    h1
+      font-size: 70px
+    p
+      font-size: $p-font-basic-size
+hr
+  height: 10px
+  background: black
+
+.dates
+  display: flex
+  width: 100%
+iframe
+  overflow: hidden
+  width: 100%
+  height: 100%
+  border: none
+  outline: none
+
+@media (max-width: 1920px)
+  .logo-background
+    width: 90vw
+    height: 20vh

@@ -1,10 +1,11 @@
 let nameToGet = ''
+let candidateCard = document.getElementById('candidateCard')
 let candidateData = {
     name: "test",
     surname: "testorov",
     grade: "11A",
     description:
-        "long long long long long long long long long long long long long long test description",
+        "long long long long long long long long long long long long long long candidateWeb description",
     photo: File,
     video: File,
     userAttemptsLeft: 3
@@ -121,3 +122,22 @@ function setDisplayNone(item) {
         }
     }, 10)
 }
+
+document.getElementById('viewVideoBtn').addEventListener('click', function() {
+    document.getElementById('videoSource').src = candidateData.video;
+    document.getElementById('candidateVideo').load();
+    document.getElementById('videoPopup').style.display = 'block';
+});
+
+document.getElementById('closePopup').addEventListener('click', function() {
+    document.getElementById('videoPopup').style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    const popup = document.getElementById('videoPopup');
+    if (event.target === popup) {
+        document.getElementById('candidateVideo').pause()
+        document.getElementById('candidateVideo').currentTime = 0
+        popup.style.display = 'none';
+    }
+});

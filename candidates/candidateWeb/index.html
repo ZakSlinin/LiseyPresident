@@ -6,12 +6,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="back">
+        <a href="../../mainPages/index.html">
+            <button>Вернуться к кандидатам</button>
+        </a>
+    </div>
     <div class="candidateCard">
         <div class="candidateImgDiv">
             <img class="candidateImg" id="candidateImg" src="">
         </div>
         <div class="candidateName">
             <h3 id="candidateNameForCard">Кандидат 1</h3>
+            <button id="viewVideoBtn">Видео кандидата</button>
         </div>
     </div>
     <div class="candidateData">
@@ -45,6 +51,15 @@
             <button>Вернуться на главную</button>
         </a>
         <button onclick="closePopUp()">Вернуться к кандидату</button>
+    </div>
+
+    <div id="videoPopup" class="videoPopup">
+        <div class="popupContent">
+            <span class="close" id="closePopup">&times;</span>
+            <video id="candidateVideo" autoplay controls>
+                <source src="" id="videoSource" type="video/mp4">
+            </video>
+        </div>
     </div>
 
     <script src="fetchCandidateData.js"></script>

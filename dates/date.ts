@@ -1,4 +1,4 @@
-let endDate: Date = new Date(2024, 8, 30, 12, 30, 0);
+let endDate: Date = new Date(2024, 9, 1, 0, 0, 0);
 
 function countdown() {
     let currentDate: Date = new Date();
@@ -18,5 +18,5 @@ function countdown() {
 function changeForVoteEndElement(data: string) {
     document.getElementById("forVoteEnd").innerHTML = data;
 }
-
+countdown()
 setInterval(countdown, 60000);
