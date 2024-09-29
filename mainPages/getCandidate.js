@@ -57,6 +57,6 @@ function addFunctions(div, candidateName) {
     div.onclick = function () {
         localStorage.clear()
         localStorage.setItem('SelectedCandidateName', String(candidateName))
-        window.location = '../candidates/candidateWeb/index.html'
+        window.location = './candidates/candidateWeb/index.html'
     }
 }
