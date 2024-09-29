@@ -103,7 +103,6 @@ function closePopUp() {
 
     if (errorPopUp.style.display === 'flex') {
         setDisplayNone(errorPopUp)
-        window.location.reload()
     }
     if (donePopUp.style.display === 'flex') {
         setDisplayNone(donePopUp)
