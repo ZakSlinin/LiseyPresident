@@ -81,7 +81,7 @@ function postVote(userCode, candidate) {
     })
         .then(res => res.json())
         .then(data => donePopUp())
-        .catch(error => errorPopUp());
+        .catch(error => errorPopUp(error));
 }
 
 function errorPopUp(error) {
