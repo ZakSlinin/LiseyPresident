@@ -117,6 +117,7 @@ body {
 
 }
 ::-webkit-input-placeholder {
+    font-size: 30px
     color: grey;
     text-align:center;
 }
