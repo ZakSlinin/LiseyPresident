@@ -70,7 +70,7 @@ function postVoteRouter() {
 }
 
 function postVote(userCode, candidate) {
-    console.log(userCode + ' ' + candidate)
+   
     fetch('https://www.kringeproduction.ru/votes/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
