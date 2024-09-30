@@ -1,9 +1,9 @@
-var endDate = new Date(2024, 9, 1, 0, 0, 0);
+var endDate = new Date(2024, 8, 30, 0, 0, 0);
 function countdown() {
     var currentDate = new Date();
     var timeRemaining = endDate.getTime() - currentDate.getTime();
     if (timeRemaining <= 0) {
-        changeForVoteEndElement("Countdown Over!");
+        changeForVoteEndElement("Победил Тимур Водяницкий!");
     }
     else {
         var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
