@@ -137,6 +137,7 @@ window.addEventListener('click', function(event) {
     if (event.target === popup) {
         setVideoTo0()
         popup.style.display = 'none';
+        location.reload()
     }
 });
 
