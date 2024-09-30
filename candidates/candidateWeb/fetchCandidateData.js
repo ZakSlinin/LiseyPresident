@@ -70,7 +70,7 @@ function postVoteRouter() {
 }
 
 function postVote(userCode, candidate) {
-    console.log(userCode + ' ' + candidate)
+   
     fetch('https://www.kringeproduction.ru/votes/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -81,7 +81,7 @@ function postVote(userCode, candidate) {
     })
         .then(res => res.json())
         .then(data => donePopUp())
-        .catch(error => errorPopUp());
+        .catch(error => errorPopUp(error));
 }
 
 function errorPopUp(error) {
@@ -117,6 +117,7 @@ function setDisplayNone(item) {
         if (i <= 0) {
             clearInterval(interval)
             item.style.display = 'none'
+            location.reload()
         }
     }, 10)
 }
@@ -137,6 +138,7 @@ window.addEventListener('click', function(event) {
     if (event.target === popup) {
         setVideoTo0()
         popup.style.display = 'none';
+       
     }
 });
 
