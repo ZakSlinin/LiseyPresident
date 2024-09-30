@@ -117,7 +117,7 @@ body {
 
 }
 ::-webkit-input-placeholder {
-    color: black;
+    color: grey;
     text-align:center;
 }
 .votePart > button {
