@@ -117,6 +117,7 @@ function setDisplayNone(item) {
         if (i <= 0) {
             clearInterval(interval)
             item.style.display = 'none'
+            location.reload()
         }
     }, 10)
 }
@@ -137,7 +138,7 @@ window.addEventListener('click', function(event) {
     if (event.target === popup) {
         setVideoTo0()
         popup.style.display = 'none';
-        location.reload()
+       
     }
 });
 
