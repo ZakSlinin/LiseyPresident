@@ -5,19 +5,12 @@
   font-family: "Inter", sans-serif;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 main {
   width: 100vw;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .candidates-container {
@@ -94,13 +87,13 @@ main {
 
 .to-know {
   width: 30vw;
-  height: 4vh;
-  font-size: 4em;
+  height: 10vh;
+  font-size: 4vw;
   text-align: center;
   font-weight: 200;
   color: black;
   background: white;
-  border-radius: 15px;
+  border-radius: 25px;
   border: none;
 }
 
@@ -148,22 +141,4 @@ a {
   text-decoration: none;
 }
 
-@media (min-width: 1200px) {
-  .to-know {
-    height: 10vh;
-    width: 15vw;
-  }
-
-  .logo-background {
-    width: 60vw;
-  }
-
-  .candidate-background {
-    width: 60vw;
-  }
-
-  footer {
-    width: 60vw;
-  }
-
-}
+/*# sourceMappingURL=style.css.map */
