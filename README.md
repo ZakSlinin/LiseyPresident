@@ -1,2 +1,2 @@
 # Lisey President
-## Плтаформа для онлайн голосования в рамках школы. 
+## online voting platform for school
